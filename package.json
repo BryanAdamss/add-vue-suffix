@@ -1,0 +1,49 @@
+{
+  "name": "add-vue-suffix",
+  "version": "1.0.0",
+  "description": "🔨Give some vue files ,find reference and add `.vue` suffix",
+  "main": "./lib/index.js",
+  "author": {
+    "name": "GuangHui",
+    "email": "bryanadamss@foxmail.com",
+    "url": "https://github.com/BryanAdamss"
+  },
+  "scripts": {
+    "release": "standard-version",
+    "release:first": "yarn release --first-release",
+    "pub": "git push --follow-tags origin master && npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryanAdamss/add-vue-suffix.git"
+  },
+  "bin": {
+    "add-vue-suffix": "bin/www"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "vue",
+    "vue3",
+    "vite"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BryanAdamss/add-vue-suffix/issues"
+  },
+  "homepage": "https://github.com/BryanAdamss/add-vue-suffix#readme",
+  "devDependencies": {
+    "standard-version": "^9.3.1"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.14.8",
+    "@babel/parser": "^7.14.8",
+    "@babel/traverse": "^7.14.8",
+    "@babel/types": "^7.14.8",
+    "enhanced-resolve": "^5.8.2",
+    "file-save": "^0.2.0",
+    "globby": "^11.0.4",
+    "yargs": "^17.0.1"
+  }
+}

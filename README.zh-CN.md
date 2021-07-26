@@ -1,10 +1,10 @@
 # add-vue-suffix
 
-🔨Give some vue files ,find reference and add `.vue` suffix;(Useful for some project migrate to `vite` from `webpack`)
+🔨 找出所有引用`vue`组件的地方，并给其加上`.vue`后缀；适用于需要从`webpack`迁移到`vite`的老项目
 
-English | [中文](https://github.com/BryanAdamss/add-vue-suffix/blob/master/README.zh-CN.md)
+中文 | [English](https://github.com/BryanAdamss/add-vue-suffix/blob/master/README.md)
 
-## Install
+## 安装
 
 ```sh
 npm i -D add-vue-suffix
@@ -14,9 +14,9 @@ or
 yarn add add-vue-suffix -D
 ```
 
-## Usage
+## 使用
 
-### with cli
+### cli
 
 ```bash
 npx add-vue-suffix --resolveConifg ./path/to/resolve-config.js
@@ -32,9 +32,9 @@ or
 }
 ```
 
-- `resolveConifg` is a path to a `enhanced-resolve` config file;
-- Because [`webpack` use `enhanced-resolve` underhood](https://webpack.js.org/concepts/module-resolution/),so you just point to a `webpack config` that contain `resolve` property.
-- etc
+- `resolveConifg` 指向 `enhanced-resolve` 配置文件的路径；
+- [因为`webpack`底层使用`enhanced-resolve`来解析模块，所以直接将`resolveConfig`指向一个导出包含`resolve`的对象路径即可](https://webpack.js.org/concepts/module-resolution/)
+- 例子
 
 ```js
 // webpack.config.js
@@ -65,19 +65,19 @@ module.exports={
 }
 ```
 
-- If you use `vue-cli` or other not emit `webpack config` cli,you can just create a `js` file that export a object that contain `resolve` property like above.
+- 如果你使用`vue-cli`等一些不会抛出`webpack`配置的`cli`，你可以创建一个`js`文件，导出一个包含`resolve`属性的对象即可，就像上面的例子一样
 
-### with function
+### 使用 function
 
 ```js
 import addVueSuffix from 'add-vue-suffix'
 
 addVueSuffix({
-  withAST = false, // add-vue-suffix use regexp to replace import/export/import() by default;If you got some error,set this to true,it will use babel to replace import/export/import();
-  patterns = ['src/**/*.vue', 'src/**/*.js'], // some file may be import vue file;search `vue` and `js` under `src` by default;
-  globbyOptions = {}, // custom globby options, it will override default globby options;
-  resolveConfig = {}, // https://www.npmjs.com/package/enhanced-resolve；https://webpack.js.org/configuration/resolve/#resolve
-  debug = false,// set true will not rewrite file;
+  withAST = false, // 是否使用AST进行转换
+  patterns = ['src/**/*.vue', 'src/**/*.js'], // 默认搜索src下面的vue和js文件
+  globbyOptions = {}, // 自定义globby的选项，会覆盖默认的选项
+  resolveConfig = {}, // https://www.npmjs.com/package/enhanced-resolve；和webpack.resolve一致；https://webpack.js.org/configuration/resolve/#resolve
+  debug = false, // 设为true，则不会世界写文件
 })
 ```
 
@@ -90,7 +90,7 @@ addVueSuffix({
 
 ## Show your support
 
-Give a ⭐️ if this project helped you!
+如果你觉得这个插件对你有帮助，请给一个小星星 ⭐️(star)
 
 ## 📝 License
 
