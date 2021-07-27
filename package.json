@@ -11,7 +11,7 @@
   "scripts": {
     "release": "standard-version",
     "release:first": "yarn release --first-release",
-    "pub": "git push --follow-tags origin master && npm publish --access public"
+    "pub": "git push --follow-tags origin main && npm publish --access public"
   },
   "repository": {
     "type": "git",
