@@ -1,6 +1,6 @@
 {
   "name": "add-vue-suffix",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "🔨Give some vue files ,find reference and add `.vue` suffix",
   "main": "./lib/index.js",
   "author": {
