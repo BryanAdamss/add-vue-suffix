@@ -38,6 +38,8 @@ or
 
 ```js
 // webpack.config.js
+const path = require('path')
+
 module.exports={
   input:'./src/index.js',
 
@@ -46,21 +48,21 @@ module.exports={
   resolve:{
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      '@': resolve('src'),
-      Api: resolve('src/api'),
-      Api2: resolve('src/api2'),
-      Assets: resolve('src/assets'),
-      Base: resolve('src/base'),
-      Config: resolve('src/config'),
-      Components: resolve('src/components'),
-      Directives: resolve('src/directives'),
-      Plugins: resolve('src/plugins'),
-      Routes: resolve('src/routes'),
-      Sass: resolve('src/sass'),
-      Services: resolve('src/services'),
-      Stores: resolve('src/stores'),
-      Utils: resolve('src/utils'),
-      Views: resolve('src/views')
+      '@': path.resolve('src'),
+      Api: path.resolve('src/api'),
+      Api2: path.resolve('src/api2'),
+      Assets: path.resolve('src/assets'),
+      Base: path.resolve('src/base'),
+      Config: path.resolve('src/config'),
+      Components: path.resolve('src/components'),
+      Directives: path.resolve('src/directives'),
+      Plugins: path.resolve('src/plugins'),
+      Routes: path.resolve('src/routes'),
+      Sass: path.resolve('src/sass'),
+      Services: path.resolve('src/services'),
+      Stores: path.resolve('src/stores'),
+      Utils: path.resolve('src/utils'),
+      Views: path.resolve('src/views')
   }
 }
 ```
